@@ -13,13 +13,13 @@ def search(data, heuristic, start, goal):
         if node is goal:
             break
 
-        for k,v in data[node].items():
-            if k in visited:
-                if cost[k] <= v+heuristic[k]:
+        for subnode,tcost in data[node].items():
+            if subnode in visited:
+                if cost[subnode] <= tcost + heuristic[subnode]:
                     continue
-            cost[k] = cost[node] + v
-            level[k] = v + heuristic[k]
-            parent[k] = node
+            cost[subnode] = cost[node] + tcost
+            level[subnode] = tcost + heuristic[subnode]
+            parent[subnode] = node
     
     path = [goal]
     node = goal
