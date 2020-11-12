@@ -6,6 +6,10 @@ python3 test.py [filename].
 ### example:
 ```python3 test.py dataset.csv```
 
+output:
+
+```cost: 9, path: ['S', 'B', 'G']```
+
 ### File Format:
 :heavy_check_mark: First Line contains Start Node and End Node separated by a single space.
 
